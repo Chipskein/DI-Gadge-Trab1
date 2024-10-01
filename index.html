@@ -23,7 +23,6 @@
         background-color: #80CCDC
     }
     #painel-controle{
-        width: 600px;
         justify-content: center;
         align-items: center;
         align-self: center;
@@ -77,17 +76,19 @@
                 </div>
                 <div>
                     <h6>Cores</h6>
+                    Foreground
                     <input 
                         type="color" 
                         name="color-fg" 
                         id="input-color-fg"
                     >
+                    Background
                     <input 
                         type="color" 
                         name="color-bg" 
                         id="input-color-bg"
                     >
-
+                    Border Color
                     <input 
                         type="color" 
                         name="border-color" 
@@ -96,19 +97,25 @@
                 </div>
                 <div>
                 
-                    <div>
-                        <h6>Texto</h6>
-                        <input 
-                            type="text" 
-                            name="texto" 
-                            id="texto-input"
-                        >
-                        <input 
-                            type="number" 
-                            name="texto-size" 
-                            id="texto-size-input"
-                        >
+                    <div id="painel-texto-div">
+                        <label>
+                            Texto
+                            <input 
+                                type="text" 
+                                name="texto" 
+                                id="texto-input"
+                            >
+                        </label>
+                        <label>
+                            Font Size
+                            <input 
+                                type="number" 
+                                name="texto-size" 
+                                id="texto-size-input"
+                            >
+                        </label>
                     </div>
+                    
                     <div>
                         <h6>Borda</h6>
                         <input 
@@ -123,6 +130,92 @@
     </div>
 </body>
 <script>
+    const textoSizeInput=document.getElementById("texto-size-input")
+    textoSizeInput.onchange=(event)=>{
+        const input=event.target
+        const value=input.value
+        changeTextoSize(value)
+    }
+    const textoInput=document.getElementById("texto-input")
+    textoInput.onchange=(event)=>{
+        const input=event.target
+        const value=input.value
+        changeTexto(value)
+    }
+    const bordaSizeInput=document.getElementById("borda-size-input")
+    bordaSizeInput.onchange=(event)=>{
+        const input=event.target
+        const value=input.value
+        changeBorderSize(value)
+    }
+    const borderColorInput=document.getElementById("border-color-input")
+    borderColorInput.onchange=(event)=>{
+        const input=event.target
+        const color=input.value
+        changeBorderColor(color)
+    }
+    const foregroundColor=document.getElementById("input-color-fg")
+    foregroundColor.onchange=(event)=>{
+        const input=event.target
+        const color=input.value
+        changeForegroundColor(color)
+    }
+    const backgroundColor=document.getElementById("input-color-bg")
+    backgroundColor.onchange=(event)=>{
+        const input=event.target
+        const color=input.value
+        changeBackgroundColor(color)
+    }
+    
+    const imageInput=document.getElementById("image-input")
+    imageInput.onchange=changeImage
+    
+    function changeBorderSize(size){
+        console.log("changeBorderSize",size)
+        const border=document.getElementById("graficos")
+        border.style.borderWidth=`${size}px`
+    }
+    function changeBorderColor(color){
+        console.log("changeBorderColor",color)
+        const border=document.getElementById("graficos")
+        border.style.borderColor=color
+    }
+    function changeTextoSize(size){
+        console.log("changeTextoSize",size)
+        const texto=document.getElementById("card-text")
+        texto.style.fontSize=`${size}px`
+    }
+
+    function changeTexto(txt){
+        console.log("changeTexto",txt)
+        const texto=document.getElementById("card-text")
+        texto.innerText=txt
+    }
+    function changeBackgroundColor(color){
+        console.log("changeBackgroundColor",color)
+        const card=document.getElementById("graficos")
+        card.style.backgroundColor=color
+
+    }
+    function changeForegroundColor(color){
+        console.log("changeForegroundColor",color)
+        const card=document.getElementById("graficos")
+        card.style.color=color
+    }
+
+    function changeImage(event){
+        const target=event.target
+        const {files}=target
+        const [ file ]=files
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imagePreview = document.getElementById("card-image");
+                imagePreview.src = e.target.result;
+            };  
+            reader.readAsDataURL(file);
+        }
+    }
 
 </script>
 </html>
