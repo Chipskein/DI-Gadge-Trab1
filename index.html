@@ -7,6 +7,10 @@
     <title>DI-TRAB | Painel</title>
 </head>
 <style>
+    body{
+        color:rgb(0, 0, 0);
+        background-color: rgb(206, 207, 207);
+    }
     #root{
         display: flex;
         justify-content: center;
@@ -109,7 +113,9 @@
                         <label>
                             Font Size
                             <input 
-                                type="number" 
+                                max="30"
+                                min="5"
+                                type="range" 
                                 name="texto-size" 
                                 id="texto-size-input"
                             >
@@ -119,7 +125,9 @@
                     <div>
                         <h6>Borda</h6>
                         <input 
-                            type="number" 
+                            max="100"
+                            min="1"
+                            type="range" 
                             name="borda-size" 
                             id="borda-size-input"
                         >
@@ -130,6 +138,11 @@
     </div>
 </body>
 <script>
+    const form=document.getElementById("painel-form")
+    form.onsubmit=(e)=>{
+        e.preventDefault()
+    }
+
     const textoSizeInput=document.getElementById("texto-size-input")
     textoSizeInput.onchange=(event)=>{
         const input=event.target
