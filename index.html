@@ -23,7 +23,9 @@
         display: flex;
         width: 600px;
         height: 400px;
-        border: 5px black solid;
+        border-width: 5px;
+        border-color: black;
+        border-style: solid;
         background-color: #80CCDC
     }
     #painel-controle{
@@ -139,9 +141,7 @@
 </body>
 <script>
     const form=document.getElementById("painel-form")
-    form.onsubmit=(e)=>{
-        e.preventDefault()
-    }
+    form.onsubmit=(e)=>e.preventDefault();
 
     const textoSizeInput=document.getElementById("texto-size-input")
     textoSizeInput.onchange=(event)=>{
@@ -155,12 +155,15 @@
         const value=input.value
         changeTexto(value)
     }
+    textoInput.value=document.getElementById("card-text").innerText
+
     const bordaSizeInput=document.getElementById("borda-size-input")
     bordaSizeInput.onchange=(event)=>{
         const input=event.target
         const value=input.value
         changeBorderSize(value)
     }
+
     const borderColorInput=document.getElementById("border-color-input")
     borderColorInput.onchange=(event)=>{
         const input=event.target
@@ -183,6 +186,9 @@
     const imageInput=document.getElementById("image-input")
     imageInput.onchange=changeImage
     
+
+
+
     function changeBorderSize(size){
         console.log("changeBorderSize",size)
         const border=document.getElementById("graficos")
