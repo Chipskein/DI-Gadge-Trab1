@@ -1,139 +1,115 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DI-TRAB | Painel</title>
+    <style>
+        body {
+            color: rgb(0, 0, 0);
+            background-color: rgb(243, 243, 243);
+        }
+
+        #root {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            row-gap: 20px;
+        }
+
+        #graficos {
+            align-self: center;
+            display: flex;
+            width: 600px;
+            height: 400px;
+            color: black !important;
+            border-width: 5px;
+            border-color: black !important;
+            border-style: solid;
+            background-color: #80CCDC !important;
+        }
+
+        #painel-controle {
+            justify-content: center;
+            align-items: center;
+            align-self: center;
+            border: 5px black solid;
+        }
+
+        #card-image {
+            align-self: left;
+            width: 50%;
+        }
+
+        #div-card-text {
+            justify-content: center;
+            width: 50%;
+            padding: 2%;
+        }
+
+        #card-text {
+            text-align: justify;
+        }
+
+        #painel-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
 </head>
-<style>
-    body{
-        color:rgb(0, 0, 0);
-        background-color: rgb(243, 243, 243);
-    }
-    #root{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        text-align: center;
-        row-gap: 20px;
-    }
-    #graficos{
-        align-self: center;
-        display: flex;
-        width: 600px;
-        height: 400px;
-        color: black !important;
-        border-width: 5px;
-        border-color: black !important;
-        border-style: solid;
-        background-color: #80CCDC !important;
-    }
-    #painel-controle{
-        justify-content: center;
-        align-items: center;
-        align-self: center;
-        border: 5px black solid;
-    }
-    #card-image{
-        align-self: left;
-        width: 50%;
-    }
-    #div-card-text{
-        justify-content: center;
-        width: 50%;
-        padding: 2%;
-    }
-    #card-text{
-        text-align: justify;
-    }
-    #painel-form{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-</style>
+
 <body>
     <div id="root">
         <div id="graficos">
-            <img 
-                id="card-image"
-                src="https://www.petz.com.br/blog/wp-content/uploads/2023/08/dia-do-coelho2.jpg"
-                alt="imagem do cartão"
-            >
+            <img id="card-image" src="https://www.petz.com.br/blog/wp-content/uploads/2023/08/dia-do-coelho2.jpg"
+                alt="imagem do cartão">
             <div id="div-card-text">
                 <h2 id="card-hello">Olá <span id="user">{USER}</span></h2>
                 <p id="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula metus nec est bibendum, at ultricies purus ullamcorper. Sed tristique erat id mi luctus iaculis. Pellentesque ac efficitur eros, sit amet consequat nulla. Etiam efficitur sem ut faucibus sagittis.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula metus nec est bibendum, at
+                    ultricies purus ullamcorper. Sed tristique erat id mi luctus iaculis. Pellentesque ac efficitur
+                    eros, sit amet consequat nulla. Etiam efficitur sem ut faucibus sagittis.
                 </p>
             </div>
-            
+
         </div>
         <h3>Painel</h3>
         <div id="painel-controle">
             <form id="painel-form">
                 <div>
                     <h6>Figura</h6>
-                    <input 
-                        type="file" 
-                        name="imagem"
-                        id="image-input"
-                    >
+                    <input type="file" name="imagem" id="image-input">
                 </div>
                 <div>
                     <h6>Cores</h6>
                     Foreground
-                    <input 
-                        type="color" 
-                        name="color-fg" 
-                        id="input-color-fg"
-                    >
+                    <input type="color" name="color-fg" id="input-color-fg">
                     Background
-                    <input 
-                        type="color" 
-                        name="color-bg" 
-                        id="input-color-bg"
-                    >
+                    <input type="color" name="color-bg" id="input-color-bg">
                     Border Color
-                    <input 
-                        type="color" 
-                        name="border-color" 
-                        id="border-color-input"
-                    >
+                    <input type="color" name="border-color" id="border-color-input">
                 </div>
                 <div>
-                
+
                     <div id="painel-texto-div">
                         <label>
                             Texto
-                            <input 
-                                type="text" 
-                                name="texto" 
-                                id="texto-input"
-                            >
+                            <input type="text" name="texto" id="texto-input">
                         </label>
                         <label>
                             Font Size
-                            <input 
-                                max="30"
-                                min="5"
-                                type="range" 
-                                name="texto-size" 
-                                id="texto-size-input"
-                            >
+                            <input max="30" min="5" type="range" name="texto-size" id="texto-size-input">
                         </label>
                     </div>
-                    
+
                     <div>
                         <h6>Borda</h6>
-                        <input 
-                            max="100"
-                            min="1"
-                            type="range" 
-                            name="borda-size" 
-                            id="borda-size-input"
-                        >
+                        <input max="100" min="1" type="range" name="borda-size" id="borda-size-input">
                     </div>
                 </div>
             </form>
@@ -141,113 +117,114 @@
     </div>
 </body>
 <script>
-    const form=document.getElementById("painel-form")
-    form.onsubmit=(e)=>e.preventDefault();
+    const form = document.getElementById("painel-form")
+    form.onsubmit = (e) => e.preventDefault();
 
-    const textoSizeInput=document.getElementById("texto-size-input")
-    textoSizeInput.onchange=(event)=>{
-        const input=event.target
-        const value=input.value
+    const textoSizeInput = document.getElementById("texto-size-input")
+    textoSizeInput.onchange = (event) => {
+        const input = event.target
+        const value = input.value
         changeTextoSize(value)
     }
-    const textoInput=document.getElementById("texto-input")
-    textoInput.onchange=(event)=>{
-        const input=event.target
-        const value=input.value
+    const textoInput = document.getElementById("texto-input")
+    textoInput.onchange = (event) => {
+        const input = event.target
+        const value = input.value
         changeTexto(value)
     }
-    textoInput.value=document.getElementById("card-text").innerText
+    textoInput.value = document.getElementById("card-text").innerText
 
-    const bordaSizeInput=document.getElementById("borda-size-input")
-    bordaSizeInput.onchange=(event)=>{
-        const input=event.target
-        const value=input.value
+    const bordaSizeInput = document.getElementById("borda-size-input")
+    bordaSizeInput.onchange = (event) => {
+        const input = event.target
+        const value = input.value
         changeBorderSize(value)
     }
 
-    const borderColorInput=document.getElementById("border-color-input")
-    borderColorInput.value=rgbToHex(...extractRGB(getComputedStyle(document.getElementById("graficos")).borderColor))
-    borderColorInput.onchange=(event)=>{
-        const input=event.target
-        const color=input.value
+    const borderColorInput = document.getElementById("border-color-input")
+    borderColorInput.value = rgbToHex(...extractRGB(getComputedStyle(document.getElementById("graficos")).borderColor))
+    borderColorInput.onchange = (event) => {
+        const input = event.target
+        const color = input.value
         changeBorderColor(color)
     }
-    const foregroundColor=document.getElementById("input-color-fg")
-    foregroundColor.value=rgbToHex(...extractRGB(getComputedStyle(document.getElementById("graficos")).color))
-    foregroundColor.onchange=(event)=>{
-        const input=event.target
-        const color=input.value
+    const foregroundColor = document.getElementById("input-color-fg")
+    foregroundColor.value = rgbToHex(...extractRGB(getComputedStyle(document.getElementById("graficos")).color))
+    foregroundColor.onchange = (event) => {
+        const input = event.target
+        const color = input.value
         changeForegroundColor(color)
     }
-    const backgroundColor=document.getElementById("input-color-bg")
-    backgroundColor.value=rgbToHex(...extractRGB(getComputedStyle(document.getElementById("graficos")).backgroundColor))
-    backgroundColor.onchange=(event)=>{
-        const input=event.target
-        const color=input.value
+    const backgroundColor = document.getElementById("input-color-bg")
+    backgroundColor.value = rgbToHex(...extractRGB(getComputedStyle(document.getElementById("graficos")).backgroundColor))
+    backgroundColor.onchange = (event) => {
+        const input = event.target
+        const color = input.value
         changeBackgroundColor(color)
     }
 
-    
-    const imageInput=document.getElementById("image-input")
-    imageInput.onchange=changeImage
-    
+
+    const imageInput = document.getElementById("image-input")
+    imageInput.onchange = changeImage
 
 
 
-    function changeBorderSize(size){
-        console.log("changeBorderSize",size)
-        const border=document.getElementById("graficos")
-        border.style.borderWidth=`${size}px`
+
+    function changeBorderSize(size) {
+        console.log("changeBorderSize", size)
+        const border = document.getElementById("graficos")
+        border.style.borderWidth = `${size}px`
     }
-    function changeBorderColor(color){
-        console.log("changeBorderColor",color)
-        const border=document.getElementById("graficos")
-        border.style.borderColor=color
+    function changeBorderColor(color) {
+        console.log("changeBorderColor", color)
+        const border = document.getElementById("graficos")
+        border.style.borderColor = color
     }
-    function changeTextoSize(size){
-        console.log("changeTextoSize",size)
-        const texto=document.getElementById("card-text")
-        texto.style.fontSize=`${size}px`
+    function changeTextoSize(size) {
+        console.log("changeTextoSize", size)
+        const texto = document.getElementById("card-text")
+        texto.style.fontSize = `${size}px`
     }
 
-    function changeTexto(txt){
-        console.log("changeTexto",txt)
-        const texto=document.getElementById("card-text")
-        texto.innerText=txt
+    function changeTexto(txt) {
+        console.log("changeTexto", txt)
+        const texto = document.getElementById("card-text")
+        texto.innerText = txt
     }
-    function changeBackgroundColor(color){
-        console.log("changeBackgroundColor",color)
-        const card=document.getElementById("graficos")
-        card.style.backgroundColor=color
+    function changeBackgroundColor(color) {
+        console.log("changeBackgroundColor", color)
+        const card = document.getElementById("graficos")
+        card.style.backgroundColor = color
 
     }
-    function changeForegroundColor(color){
-        console.log("changeForegroundColor",color)
-        const card=document.getElementById("graficos")
-        card.style.color=color
+    function changeForegroundColor(color) {
+        console.log("changeForegroundColor", color)
+        const card = document.getElementById("graficos")
+        card.style.color = color
     }
 
-    function changeImage(event){
-        const target=event.target
-        const {files}=target
-        const [ file ]=files
+    function changeImage(event) {
+        const target = event.target
+        const { files } = target
+        const [file] = files
         if (file) {
             const reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 const imagePreview = document.getElementById("card-image");
                 imagePreview.src = e.target.result;
-            };  
+            };
             reader.readAsDataURL(file);
         }
     }
     function rgbToHex(r, g, b) {
         return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
     }
-    function extractRGB(rgbString){
-        const [r,g,b] = rgbString.replace("rgb","").replace("(","").replace(")","").split(",")
-        return [parseInt(r),parseInt(g),parseInt(b)]
+    function extractRGB(rgbString) {
+        const [r, g, b] = rgbString.replace("rgb", "").replace("(", "").replace(")", "").split(",")
+        return [parseInt(r), parseInt(g), parseInt(b)]
     }
 
 
 </script>
+
 </html>
