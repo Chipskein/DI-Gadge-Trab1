@@ -1,65 +1,21 @@
 # Trabalho 1 de JavaScript
 
-## Descrição do Projeto
+1. Fazer um painel com elementos gráficos e um painel de controles que irão alterar estes elementos gráficos.  
+   Os controles devem ser formulários e/ou botões estilizados. Alterações nos valores e posições dos formulários e botões causam alterações no painel gráfico. O painel gráfico deve ser uma `div` com outros elementos dentro.  
+   Via formulário de controle pode-se mudar cor de fundo, borda, texto, figura, etc. de uma `div` que será o cartão. Também é possível mudar tamanhos de elementos e movê-los.  
+   Através dos controles, o gadget deve alterar no painel gráfico:
+   - Pelo menos 5 aspectos gráficos
+   - Pelo menos 1 deles deve ter alteração de tamanho
+   - Pelo menos 1 deles deve ter alteração em elemento textual
 
-Este projeto consiste em um painel gráfico interativo onde o usuário pode alterar diversos elementos visuais através de um painel de controle. O painel gráfico e o formulário de controle estão na mesma página, permitindo que as alterações sejam visualizadas em tempo real.
+   O formulário de controle e o painel gráfico ficam na mesma página e, conforme o usuário vai alterando o formulário, ele já vai vendo o resultado no painel.  
+   É uma página para o usuário final, todo visual da página conta.  
+   Evite possíveis erros do usuário (impedir inserção de dados errados, apagar/desabilitar campos já respondidos, limitar o número de opções, ...).  
+   Caprichar no visual do gadget, colocar título, bordas, fundos, etc.  
+   O gadget deve ser responsivo e rodar no desktop e no celular:
+   
+   - Deve passar pelo validador da W3C sem erros (<https://validator.w3.org/>). Em todas as fases do gadget.
+   - Não deve apresentar erros pegos pelo console do JavaScript (JS) dos navegadores.
+   - Usar CSS, Bootstrap ou outro framework CSS para dar um bom visual ao gadget.
 
-## Funcionalidades
-
-- Alteração de pelo menos 5 aspectos gráficos da div (cartão).
-- Modificação de tamanhos de elementos.
-- Alteração de elementos textuais.
-- Controle de entrada para evitar erros do usuário.
-
-## Aspectos Gráficos Alteráveis
-
-1. Cor de fundo
-2. Cor da borda
-3. Texto exibido
-4. Imagem de fundo
-5. Tamanho da fonte
-
-## Tamanhos e Elementos
-
-- Alteração do tamanho do cartão.
-- Mudança de elementos textuais (ex: título do cartão).
-
-## Painel de Controle
-
-O painel de controle é composto por formulários e botões estilizados. As interações do usuário resultarão em mudanças imediatas no painel gráfico.
-
-### Exemplo de Controles
-
-- Seletores de cores para fundo e borda.
-- Campo de texto para o conteúdo.
-- Botão para aplicar as mudanças.
-- Slider para ajustar o tamanho.
-
-## Responsividade
-
-O design é responsivo, funcionando bem tanto em desktops quanto em dispositivos móveis.
-
-## Validação e Erros
-
-- O projeto passa pelo validador da W3C sem erros.
-- Não apresenta erros no console do JavaScript nos navegadores.
-
-## Estilização
-
-Utilizamos CSS e o framework Bootstrap para garantir um bom visual do gadget, com títulos, bordas, e fundos estilizados.
-
-## Repositório
-
-O código-fonte do projeto está disponível no GitHub. [Link para o repositório](https://github.com/seu-usuario/seu-repositorio)
-
-## GitHub Pages
-
-Você pode acessar a versão publicada do projeto através do GitHub Pages. [Link para GitHub Pages](https://seu-usuario.github.io/seu-repositorio)
-
-## Como Contribuir
-
-Sinta-se à vontade para contribuir com melhorias ou sugestões. Basta abrir uma nova issue ou um pull request no repositório.
-
-## Licença
-
-Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+O gadget deve ser disponibilizado no GitHub. O link para o repositório e o GitHub Pages do trabalho deve ser informado no SIGAA.
