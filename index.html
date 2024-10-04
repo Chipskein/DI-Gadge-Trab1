@@ -9,7 +9,7 @@
 <style>
     body{
         color:rgb(0, 0, 0);
-        background-color: rgb(206, 207, 207);
+        background-color: rgb(243, 243, 243);
     }
     #root{
         display: flex;
@@ -23,10 +23,11 @@
         display: flex;
         width: 600px;
         height: 400px;
+        color: black !important;
         border-width: 5px;
-        border-color: black;
+        border-color: black !important;
         border-style: solid;
-        background-color: #80CCDC
+        background-color: #80CCDC !important;
     }
     #painel-controle{
         justify-content: center;
@@ -165,23 +166,27 @@
     }
 
     const borderColorInput=document.getElementById("border-color-input")
+    borderColorInput.value=rgbToHex(...extractRGB(getComputedStyle(document.getElementById("graficos")).borderColor))
     borderColorInput.onchange=(event)=>{
         const input=event.target
         const color=input.value
         changeBorderColor(color)
     }
     const foregroundColor=document.getElementById("input-color-fg")
+    foregroundColor.value=rgbToHex(...extractRGB(getComputedStyle(document.getElementById("graficos")).color))
     foregroundColor.onchange=(event)=>{
         const input=event.target
         const color=input.value
         changeForegroundColor(color)
     }
     const backgroundColor=document.getElementById("input-color-bg")
+    backgroundColor.value=rgbToHex(...extractRGB(getComputedStyle(document.getElementById("graficos")).backgroundColor))
     backgroundColor.onchange=(event)=>{
         const input=event.target
         const color=input.value
         changeBackgroundColor(color)
     }
+
     
     const imageInput=document.getElementById("image-input")
     imageInput.onchange=changeImage
@@ -235,6 +240,14 @@
             reader.readAsDataURL(file);
         }
     }
+    function rgbToHex(r, g, b) {
+        return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
+    }
+    function extractRGB(rgbString){
+        const [r,g,b] = rgbString.replace("rgb","").replace("(","").replace(")","").split(",")
+        return [parseInt(r),parseInt(g),parseInt(b)]
+    }
+
 
 </script>
 </html>
