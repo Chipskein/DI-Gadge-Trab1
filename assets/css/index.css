@@ -1,0 +1,92 @@
+body {
+    color: rgb(0, 0, 0);
+    background-color: rgb(243, 243, 243);
+}
+
+#root {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    text-align: center;
+}
+
+#graficos {
+    align-self: center;
+    display: flex;
+    width: 600px;
+    height: 400px;
+    color: black;
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: #80CCDC;
+}
+
+#painel-controle {
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    border: 5px black solid;
+}
+
+#card-image {
+    align-self: left;
+    width: 50%;
+}
+
+#div-card-text {
+    justify-content: center;
+    width: 50%;
+    padding: 2%;
+}
+
+#card-text {
+    text-align: justify;
+}
+
+#painel-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    row-gap: 25px;
+}
+
+#painel-texto-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    row-gap: 25px;
+}
+
+#texto-input{
+    width: 100%;
+    min-height: 120px;
+}
+
+@media screen and (max-width: 1000px) {
+    #root {
+        flex-direction: column;
+        row-gap: 25px;
+    }
+    #graficos {
+        width: 100%;
+    }
+    #painel-controle {
+        width: 100%;
+    }
+    #card-image {
+        width: 100%;
+    }
+    #div-card-text {
+        width: 100%;
+    }
+    #texto-input{
+        width: 100%;
+    }
+    
+}
