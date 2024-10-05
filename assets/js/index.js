@@ -142,6 +142,11 @@ function changeImage(event) {
     const { files } = target
     const [file] = files
     if (file) {
+         const validImageTypes = ["image/jpeg", "image/png", "image/gif", "image/webp"];
+         if (!validImageTypes.includes(file.type)) {
+             alert("Faça upload de uma imagem válida (JPEG, PNG, GIF, or WEBP).");
+             return;
+         }
         const reader = new FileReader();
         reader.onload = function (e) {
             const imagePreview = document.getElementById("card-image");
